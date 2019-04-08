@@ -5,17 +5,17 @@ import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let response;
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        let response;
 
-    const authReq = req.clone();
+        const authReq = req.clone();
 
-    response = next.handle(authReq);
-    
-    return response.pipe(tap(data => {}, err => {
-        if(err.status == 500){
-            alert("Erro ao se comunicar com o servidor. Tente novamente mais tarde.");
-        }
-    }));
-  }
+        response = next.handle(authReq);
+
+        return response.pipe(tap(data => { }, err => {
+            if (err.status == 500) {
+                alert("Erro ao se comunicar com o servidor. Tente novamente mais tarde.");
+            }
+        }));
+    }
 }

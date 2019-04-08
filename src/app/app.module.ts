@@ -7,31 +7,42 @@ import { SharedModule } from './shared/shared.module';
 import { InterceptorModule } from './interceptor/interceptor.module';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
     {
         path: '',
         redirectTo: 'login',
         pathMatch: 'full'
+    },
+
+    {
+        path: 'login',
+        component: LoginComponent
     }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    SharedModule,
-    HttpClientModule,
-    InterceptorModule,
+    declarations: [
+        AppComponent,
+        LoginComponent
+    ],
 
-    RouterModule.forRoot(
-        routes,
-        { useHash: true }
-    )
-  ],
-  providers: [HttpClientModule],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        SharedModule,
+        HttpClientModule,
+        InterceptorModule,
+
+        RouterModule.forRoot(
+            routes,
+            { useHash: true }
+        )
+    ],
+
+    providers: [HttpClientModule],
+    
+    bootstrap: [AppComponent]
 })
+
 export class AppModule { }
