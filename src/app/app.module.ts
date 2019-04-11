@@ -8,6 +8,7 @@ import { InterceptorModule } from './interceptor/interceptor.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { DragonListComponent } from './dragon-list/dragon-list.component';
 
 const routes: Routes = [
     {
@@ -19,13 +20,19 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+
+    {
+        path: 'dragonlist',
+        component: DragonListComponent
     }
 ];
 
 @NgModule({
     declarations: [
         AppComponent,
-        LoginComponent
+        LoginComponent,
+        DragonListComponent
     ],
 
     imports: [
