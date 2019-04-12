@@ -15,10 +15,9 @@
     height: 100%;
 
     .dragonlist_title{
-        font-size: 20px;
-        font-weight: 300;
-
-        padding: 30px 30px 15px;
+        font-size: 14px;
+        
+        padding: 30px 30px 0;
     }
 
     .dragons_list{
@@ -91,9 +90,5 @@
 @media(max-width: 749px){
     .dragons_container{
         position: static;
-
-        .dragonlist_title{
-            padding: 15px;
-        }
     }
 }
