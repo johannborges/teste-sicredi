@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DragonsService } from '../services/dragons.service';
 
 @Component({
     selector: 'app-dragon-list',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DragonListComponent implements OnInit {
-    constructor() { }
+    constructor(
+        private dragonsService: DragonsService
+    ) {}
 
     ngOnInit() {
-        
+        this.dragonsService.getDragons().subscribe((val) => {
+            
+        });
     }
 }
