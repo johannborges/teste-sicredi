@@ -13,10 +13,10 @@ export class AppComponent{
     ){
         router.events.subscribe((val) => {
             if(val instanceof NavigationEnd &&
-                val.url != "/login" &&
+                val.url != "/auth/login" &&
                 typeof localStorage.token == "undefined"
             ){
-                this.router.navigate(["/login"]);
+                this.router.navigate(["/auth/login"]);
             }
         });
     }

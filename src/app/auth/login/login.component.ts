@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
                 localStorage.clear();
                 localStorage.setItem("token", "as4d6g5asd46g86sadg65sd4g");
 
-                this.router.navigate(["/dragonlist"]);
+                this.router.navigate(["/main/dragonlist"]);
             }
 
             else{

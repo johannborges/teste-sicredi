@@ -7,32 +7,28 @@ import { SharedModule } from './shared/shared.module';
 import { InterceptorModule } from './interceptor/interceptor.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { DragonListComponent } from './dragon-list/dragon-list.component';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'auth',
         pathMatch: 'full'
     },
 
     {
-        path: 'login',
-        component: LoginComponent
+        path: 'auth',
+        loadChildren: './auth/auth.module#AuthModule'
     },
 
     {
-        path: 'dragonlist',
-        component: DragonListComponent
+        path: 'main',
+        loadChildren: './main/main.module#MainModule'
     }
 ];
 
 @NgModule({
     declarations: [
-        AppComponent,
-        LoginComponent,
-        DragonListComponent
+        AppComponent
     ],
 
     imports: [

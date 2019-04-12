@@ -1,12 +1,12 @@
 export class Dragon{
-    id: Number;
-    createdAt: String;
-    type: String;
+    id: number;
+    createdAt: string;
+    type: string;
 
     constructor(
-        id: Number,
-        createdAt: String,
-        type: String
+        id: number,
+        createdAt: string,
+        type: string
     ){
         this.id = id;
         this.createdAt = createdAt;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DragonsService } from '../services/dragons.service';
-import { Dragon } from '../models/dragon.model';
+import { DragonsService } from '../../services/dragons.service';
+import { Dragon } from '../../models/dragon.model';
 
 @Component({
     selector: 'app-dragon-list',
@@ -16,8 +16,6 @@ export class DragonListComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.dragonsService.getDragons().subscribe((val) => {
-            this.dragons = val;
-        });
+        this.dragons = this.dragonsService.getDragons();
     }
 }
