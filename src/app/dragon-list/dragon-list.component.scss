@@ -1,0 +1,69 @@
+@import "../shared/shared";
+
+.dragons_container{
+    margin: 100px auto;
+    
+    background: $white;
+    border-radius: 5px;
+
+    overflow: hidden;
+    overflow-x: auto;
+
+    .dragons_list{
+        display: grid;
+        grid-row-gap: 15px;
+
+        min-width: 720px;
+        padding: 30px;
+
+        .dragon_item{
+            display: inline-grid;
+            grid-template-columns: 50px 45% calc(45% - 50px) 10%;
+            align-items: center;
+
+            font-size: 14px;
+
+            .dragon_picture{
+                border: 1px solid $black;
+
+                font-size: 0;
+
+                img{
+                    max-width: 100%;
+                }
+            }
+
+            .dragon_actions{
+                a{
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    margin-right: 10px;
+
+                    font-size: 24px;
+                    color: $blue;
+                    font-family: $iconfont;
+
+                    &.delete{
+                        margin: 0;
+
+                        color: $red;
+                    }
+                }
+            }
+
+            &:first-of-type{
+                text-transform: uppercase;
+                font-size: 20px;
+            }
+
+            > :last-of-type{
+                text-align: right;
+            }
+
+            > :not(:first-of-type):not(:last-of-type){
+                padding-left: 15px;
+            }
+        }
+    }
+}
