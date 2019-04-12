@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
     selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
 
             password: [null, [
                 Validators.required,
-                Validators.minLength(4)
+                Validators.minLength(3)
             ]]
         })
     }
@@ -43,8 +44,20 @@ export class LoginComponent implements OnInit {
             }
 
             else{
-                alert("Credenciais incorretas (dica: o usuário é teste, e a senha é abc123!@#");
+                Swal.fire({
+                    title: "Credenciais incorretas",
+                    html: "Dica: o usuário é \"<b>teste</b>\", e a senha é \"<b>abc123!@#</b>\".",
+                    type: "error"
+                });
             }
+        }
+
+        else{
+            Swal.fire({
+                title: "Formulário incompleto",
+                html: "Você precisa digitar um usuário.<br>E uma senha de pelo menos 3 caracteres.",
+                type: "warning"
+            });
         }
     }
 }

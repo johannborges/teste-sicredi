@@ -69,7 +69,6 @@ textarea{
     height: 100px;
 }
 
-button,
 .button{
     height: 40px;
     width: auto;
@@ -96,14 +95,11 @@ button,
         background: $red;
     }
 }
-button:disabled,
-button:hover:disabled,
 .button:disabled,
 .button:hover:disabled{
     background: $lightgrey;
     cursor: default;
 }
-button:hover,
 .button:hover{
     background: lighten($maincolor, 10%);
     
