@@ -20,7 +20,7 @@
             <div title="{{ dragon.type }}">{{ dragon.type }}</div>
             <div title="{{ dragon.createdAt }}">{{ dragon.createdAt }}</div>
             <div class="dragon_actions">
-                <a href="javascript:;" title="Ver detalhes">open_in_browser</a>
+                <a [routerLink]="['/main/view-dragon/', dragon.id]" title="Ver detalhes">open_in_browser</a>
                 <a [routerLink]="['/main/edit-dragon/', dragon.id]" title="Editar">edit</a>
                 <a href="javascript:;" class="delete" title="Deletar" (click)="deleteDragon(dragon.id)">close</a>
             </div>
