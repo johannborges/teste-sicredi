@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { MainComponent } from './main.component';
 import { DragonListComponent } from './dragon-list/dragon-list.component';
-import { SharedModule } from '../shared/shared.module';
+import { DragonFormComponent } from './dragon-form/dragon-form.component';
 
 const routes: Routes = [
     {
@@ -14,13 +16,23 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'dragonlist',
+                redirectTo: 'list-dragons',
                 pathMatch: 'full'
             },
         
             {
-                path: 'dragonlist',
+                path: 'list-dragons',
                 component: DragonListComponent
+            },
+        
+            {
+                path: 'create-dragon',
+                component: DragonFormComponent
+            },
+        
+            {
+                path: 'edit-dragon/:id',
+                component: DragonFormComponent
             }
         ]
     }
@@ -36,7 +48,8 @@ const routes: Routes = [
 
     declarations: [
         MainComponent,
-        DragonListComponent
+        DragonListComponent,
+        DragonFormComponent
     ]
 })
 

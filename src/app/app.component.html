@@ -7,7 +7,7 @@
 
         <ul class="page_menu">
             <li class="menu_item">
-                <a [routerLink]="['/dragonlist']">
+                <a [routerLink]="['/main/list-dragons']">
                     <span class="menu_item_icon">list</span>
 
                     <span class="menu_item_text">Listar dragões</span>
@@ -15,7 +15,7 @@
             </li>
 
             <li class="menu_item">
-                <a href="javascript:;">
+                <a [routerLink]="['/main/create-dragon']">
                     <span class="menu_item_icon">plus_one</span>
 
                     <span class="menu_item_text">Criar novo dragão</span>
@@ -23,7 +23,7 @@
             </li>
 
             <li class="menu_item">
-                <a [routerLink]="['/login']">
+                <a [routerLink]="['/main/login']">
                     <span class="menu_item_icon">thumb_down</span>
 
                     <span class="menu_item_text">Log out</span>
