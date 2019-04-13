@@ -37,9 +37,6 @@ export class LoginComponent implements OnInit {
             let controls = this.form.controls;
 
             if(this.userService.doLogin(controls.username.value, controls.password.value)){
-                localStorage.clear();
-                localStorage.setItem("token", "as4d6g5asd46g86sadg65sd4g");
-
                 this.router.navigate(["/main/list-dragons"]);
             }
 

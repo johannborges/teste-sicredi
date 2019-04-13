@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-root',
@@ -16,7 +17,14 @@ export class AppComponent{
                 val.url != "/auth/login" &&
                 typeof localStorage.token == "undefined"
             ){
-                this.router.navigate(["/auth/login"]);
+                Swal.fire({
+                    title: "Sua sessão expirou",
+                    text: "Faça login novamente",
+                    type: "warning",
+                    confirmButtonText: "Ok"
+                })
+
+                this.router.navigate(['/auth/login']);
             }
         });
     }
